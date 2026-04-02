@@ -5,9 +5,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Rich Zou",
+  title: "Nate Gedion",
   description:
-    "Fuzhounese American. Investing in out-of-distribution founders. Previously at xAI. Susa Fellow.",
+    "Founder and builder. [Your tagline here]",
 };
 
 export default function RootLayout({

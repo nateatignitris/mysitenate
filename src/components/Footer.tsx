@@ -40,7 +40,7 @@ export function Footer() {
           color: "var(--muted-foreground)",
         }}
       >
-        © 2025 Rich Zou.
+        © 2025 Nate Gedion.
       </div>
       <div className="flex gap-4 items-center">
         <div

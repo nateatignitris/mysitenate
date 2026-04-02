@@ -9,7 +9,6 @@ import { SunIcon, MoonIcon, MenuIcon, XCloseIcon } from "./icons";
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/essays", label: "Essays" },
-  { href: "/restaurants", label: "Restaurants" },
 ];
 
 export function Header() {
@@ -42,7 +41,7 @@ export function Header() {
               color: theme === "dark" ? "#ededed" : "#3c3c3c",
             }}
           >
-            <Link href="/">Rich Zou</Link>
+            <Link href="/">Nate Gedion</Link>
           </div>
 
           {/* Desktop nav */}
