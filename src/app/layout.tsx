@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { IntroOverlay } from "@/components/IntroOverlay";
 
 export const metadata: Metadata = {
   title: "Nate Gedion",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col antialiased">
         <ThemeProvider>
+          <IntroOverlay />
           <Header />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
