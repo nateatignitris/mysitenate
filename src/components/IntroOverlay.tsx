@@ -9,64 +9,66 @@ export function IntroOverlay() {
     const overlay = overlayRef.current;
     if (!overlay) return;
 
-    // Small delay so the name is seen, then collapse upward like KODE
     const timer = setTimeout(() => {
-      overlay.style.transition =
-        "transform 1s cubic-bezier(0.3, 0, 0, 1)";
-      overlay.style.transformOrigin = "50% 0%";
-      overlay.style.transform = "scaleY(0)";
-
-      // Remove from DOM after animation ends so it doesn't block interaction
+      overlay.style.transition = "transform 1s cubic-bezier(0.3, 0, 0, 1)";
+      overlay.style.transform = "translateY(-100%)";
       overlay.addEventListener(
         "transitionend",
-        () => {
-          overlay.style.display = "none";
-        },
+        () => { overlay.style.display = "none"; },
         { once: true }
       );
-    }, 900);
+    }, 1100);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div
-      ref={overlayRef}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 9999,
-        backgroundColor: "#0a0a0a",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        pointerEvents: "none",
-        transformOrigin: "50% 0%",
-        transform: "scaleY(1)",
-      }}
-    >
-      <span
+    <>
+      <style>{`
+        @keyframes letterSnap {
+          0%    { opacity: 0; }
+          0.1%  { opacity: 1; }
+          100%  { opacity: 1; }
+        }
+        .intro-letter {
+          display: inline-block;
+          opacity: 0;
+          animation: letterSnap 0.8s forwards;
+        }
+        .intro-letter:nth-child(1) { animation-delay: 0.1s; }
+        .intro-letter:nth-child(2) { animation-delay: 0.25s; }
+      `}</style>
+
+      <div
+        ref={overlayRef}
         style={{
-          fontFamily: 'Georgia, "Times New Roman", Times, serif',
-          fontSize: "clamp(32px, 6vw, 80px)",
-          fontWeight: 400,
-          color: "#ededed",
-          letterSpacing: "-0.02em",
-          lineHeight: 1,
-          userSelect: "none",
-          opacity: 0,
-          animation: "introFadeIn 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s forwards",
+          position: "fixed",
+          inset: 0,
+          zIndex: 9999,
+          backgroundColor: "#0a0a0a",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          pointerEvents: "none",
         }}
       >
-        Nate Gedion
-      </span>
-
-      <style>{`
-        @keyframes introFadeIn {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
-    </div>
+        <span
+          aria-hidden="true"
+          style={{
+            fontFamily:
+              '-apple-system, "SF Pro Display", BlinkMacSystemFont, "Helvetica Neue", sans-serif',
+            fontSize: "clamp(100px, 20vw, 280px)",
+            fontWeight: 700,
+            color: "#ededed",
+            letterSpacing: "-0.04em",
+            lineHeight: 1,
+            userSelect: "none",
+          }}
+        >
+          <span className="intro-letter">M</span>
+          <span className="intro-letter">E</span>
+        </span>
+      </div>
+    </>
   );
 }
