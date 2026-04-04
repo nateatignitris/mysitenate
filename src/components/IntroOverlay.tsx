@@ -6,6 +6,13 @@ export function IntroOverlay() {
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only play once per session
+    if (sessionStorage.getItem("intro-played")) {
+      if (overlayRef.current) overlayRef.current.style.display = "none";
+      return;
+    }
+    sessionStorage.setItem("intro-played", "1");
+
     const overlay = overlayRef.current;
     if (!overlay) return;
 
