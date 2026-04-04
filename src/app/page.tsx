@@ -2,28 +2,79 @@ import { XTwitterIcon } from "@/components/icons";
 
 export default function HomePage() {
   return (
-    <div className="pt-32 md:pt-40 pb-16 px-6 md:px-10">
-      <div className="max-w-[800px]">
-        <div className="space-y-6">
-          <p className="font-timeline-entry text-primary-text leading-relaxed">
+    <div className="pt-28 pb-20 px-6 md:px-10">
+      <div className="max-w-[640px]">
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+          <p
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, sans-serif',
+              fontSize: "15px",
+              fontWeight: 400,
+              lineHeight: "1.75",
+              letterSpacing: "-0.01em",
+              color: "var(--foreground)",
+            }}
+          >
             [Where you&apos;re from / your origin story — one sentence that sets
             the scene.]
           </p>
-          <p className="font-timeline-entry text-primary-text leading-relaxed">
-            [What you&apos;re building and why — the core mission or obsession
-            that drives you.]
+          <p
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, sans-serif',
+              fontSize: "15px",
+              fontWeight: 400,
+              lineHeight: "1.75",
+              letterSpacing: "-0.01em",
+              color: "var(--foreground)",
+            }}
+          >
+            [What you&apos;re building and why.]
           </p>
-          <p className="font-timeline-entry text-primary-text leading-relaxed">
-            [Your background — previous roles, companies, or experiences that
+          <p
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, sans-serif',
+              fontSize: "15px",
+              fontWeight: 400,
+              lineHeight: "1.75",
+              letterSpacing: "-0.01em",
+              color: "var(--foreground)",
+            }}
+          >
+            [Your background — previous roles, companies, experiences that
             shaped you.]
           </p>
-          <p className="font-timeline-entry text-primary-text leading-relaxed">
-            [What you&apos;re looking for — who should reach out and why.]
+          <p
+            style={{
+              fontFamily: '"SF Pro Display", -apple-system, sans-serif',
+              fontSize: "15px",
+              fontWeight: 400,
+              lineHeight: "1.75",
+              letterSpacing: "-0.01em",
+              color: "var(--foreground)",
+            }}
+          >
+            [Who should reach out and why.]
           </p>
-          <p className="font-timeline-entry text-primary-text leading-relaxed pt-8 md:pt-12 flex gap-4 items-center">
+
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              alignItems: "center",
+              paddingTop: "12px",
+            }}
+          >
             <a
               href="mailto:your@email.com"
-              className="hover:opacity-70 transition-opacity"
+              style={{
+                fontFamily: '"SF Pro Display", -apple-system, sans-serif',
+                fontSize: "13px",
+                fontWeight: 400,
+                letterSpacing: "-0.01em",
+                color: "var(--muted-foreground)",
+                transition: "color 0.15s ease",
+              }}
+              className="hover:text-[var(--foreground)]"
             >
               your@email.com
             </a>
@@ -31,11 +82,15 @@ export default function HomePage() {
               href="https://x.com/yourhandle"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
+              style={{
+                color: "var(--muted-foreground)",
+                transition: "color 0.15s ease",
+              }}
+              className="hover:text-[var(--foreground)]"
             >
-              <XTwitterIcon className="w-[14px] h-[14px]" />
+              <XTwitterIcon className="w-[13px] h-[13px]" />
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </div>
