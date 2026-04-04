@@ -55,8 +55,7 @@ export function IntroOverlay() {
         <span
           aria-hidden="true"
           style={{
-            fontFamily:
-              '-apple-system, "SF Pro Display", BlinkMacSystemFont, "Helvetica Neue", sans-serif',
+            fontFamily: '"SF Pro Display", -apple-system, sans-serif',
             fontSize: "clamp(100px, 20vw, 280px)",
             fontWeight: 700,
             color: "#ededed",
