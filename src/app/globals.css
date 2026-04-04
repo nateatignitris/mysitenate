@@ -89,7 +89,7 @@
 
 /* Custom typography utilities matching richzou.com */
 .font-timeline-entry {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "SF Pro Display", -apple-system, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
@@ -104,7 +104,7 @@
 }
 
 .font-heading-large {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "SF Pro Display", -apple-system, sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 41.6px;
