@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "American Dream | Rich Zou",
+  title: "American Dream | Nate Gedion",
 };
 
 const sections = [
@@ -65,19 +65,19 @@ const sections = [
 
 export default function AmericanDreamPage() {
   return (
-    <div className="pt-32 pb-16 px-6 md:px-10">
-      <div className="max-w-[800px]">
-        <h1 className="font-heading-large mb-12 text-primary-text">
+    <div className="pt-32 pb-24 px-6 md:px-10">
+      <div className="max-w-[640px]">
+        <h1 className="font-heading-large mb-16 text-primary-text">
           American Dream
         </h1>
-        <div className="space-y-12">
+        <div className="space-y-14">
           {sections.map((section, i) => (
             <section key={i}>
-              <p className="font-timeline-date italic mb-4">{section.num}</p>
+              <p className="essay-section-num mb-5">{section.num}</p>
               {section.paragraphs.map((para, j) => (
                 <p
                   key={j}
-                  className={`font-timeline-entry text-primary-text leading-relaxed${j > 0 ? " mt-4" : ""}`}
+                  className={`essay-body text-primary-text${j > 0 ? " mt-5" : ""}`}
                 >
                   {para}
                 </p>
